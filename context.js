@@ -19,7 +19,15 @@
 */
   
 
-//Code Here
+const user = {
+  username: 'Andre',
+  email: 'none@gmail.com',
+  getUsername:function(){
+  return `${this.username}`
+  }
+}
+
+// console.log(user)
 
 
 
@@ -44,6 +52,11 @@ class Animal {
 //Code Here
 
 
+let animal1 = new Animal('Bat','Mammals','Apples')
+
+
+
+
 
 ////////// PROBLEM 3 //////////
 
@@ -61,7 +74,9 @@ let who = {
   location: 'Belize'
 }
 
-//Code Here
+const whoSaysHi = sayHi.bind(who)
+
+// console.log(whoSaysHi('Hello'))
 
 
 
@@ -73,10 +88,11 @@ let who = {
 
 function whatIsThis() {
   return this
+  
 }
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-//let context1 = ???
+let context1 = whatIsThis()
 
 let product = {
   name: 'snake plant',
@@ -84,10 +100,14 @@ let product = {
   description: 'Beautiful plant that can help filter the air inside your house.'
 }
 
+
 let func = whatIsThis.bind(product)
 
+console.log(func())
+
+
 // uncomment the line below and tell us what the context of "this" is when we invoke func
-//let context2 = ???
+let context2 = product
 
 let vacation = {
   location: 'Hawaii',
@@ -97,8 +117,11 @@ let vacation = {
   whatIsThis: whatIsThis
 }
 
+
+console.log(func(vacation.whatIsThis))
+
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
-//let context3 = ???
+let context3 = vacation
 
 
 class Family {
@@ -116,4 +139,4 @@ class Family {
 let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
-//let context4 = ???
+let context4 = family1
